@@ -14,7 +14,7 @@
     </header>
 
     <form class="add-form" action="{{ url_for('add') }}" method="post">
-      <input type="text" name="title" placeholder="Notun task lekho..." autocomplete="off" required />
+      <input type="text" name="title" placeholder="নতুন টাস্ক এড করো..." autocomplete="off" required />
       <button type="submit">Add</button>
     </form>
 
@@ -28,7 +28,7 @@
         <a class="delete" href="{{ url_for('delete', task_id=task['id']) }}">✕</a>
       </li>
       {% else %}
-      <li class="empty">Kono task nei. Uporer box e likhe Add koro 🙂</li>
+      <li class="empty">কোন টাস্ক  নেই বর্তমানে 🙂</li>
       {% endfor %}
     </ul>
   </main>
