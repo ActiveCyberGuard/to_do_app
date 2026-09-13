@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4f6f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 30px;
+  box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
+}
+
+header {
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #1a2233;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 4px;
+  color: #8892a3;
+  font-size: 0.85rem;
+}
+
+.add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.add-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #e3e7ee;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.add-form input:focus {
+  border-color: #4b7bec;
+}
+
+.add-form button {
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  background: #4b7bec;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.add-form button:hover {
+  background: #3867d6;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f8f9fc;
+  border: 1px solid #eef0f5;
+}
+
+.check {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.circle {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #c3cad6;
+  transition: all 0.15s ease;
+}
+
+.task.done .circle {
+  background: #4b7bec;
+  border-color: #4b7bec;
+}
+
+.title {
+  flex: 1;
+  font-size: 0.92rem;
+  color: #2b3346;
+}
+
+.task.done .title {
+  text-decoration: line-through;
+  color: #a7afbd;
+}
+
+.delete {
+  color: #c3cad6;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 4px;
+  transition: color 0.15s ease;
+}
+
+.delete:hover {
+  color: #eb3b5a;
+}
+
+.empty {
+  list-style: none;
+  text-align: center;
+  color: #a7afbd;
+  font-size: 0.85rem;
+  padding: 20px 0;
+}

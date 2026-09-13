@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>To-Do List</h1>
+      <p class="subtitle">{{ done_count }} of {{ total }} tasks completed</p>
+    </header>
+
+    <form class="add-form" action="{{ url_for('add') }}" method="post">
+      <input type="text" name="title" placeholder="Notun task lekho..." autocomplete="off" required />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul class="task-list">
+      {% for task in tasks %}
+      <li class="task {% if task['done'] %}done{% endif %}">
+        <a class="check" href="{{ url_for('toggle', task_id=task['id']) }}">
+          <span class="circle"></span>
+        </a>
+        <span class="title">{{ task['title'] }}</span>
+        <a class="delete" href="{{ url_for('delete', task_id=task['id']) }}">✕</a>
+      </li>
+      {% else %}
+      <li class="empty">Kono task nei. Uporer box e likhe Add koro 🙂</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>
